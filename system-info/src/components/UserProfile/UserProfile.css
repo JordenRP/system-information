@@ -1,0 +1,65 @@
+.user-profile {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-left: 20px;
+    position: relative;
+}
+
+.user-profile h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.user-profile label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.user-profile input[type="text"],
+.user-profile input[type="email"],
+.user-profile input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.user-profile-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-profile button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.user-profile button:hover {
+    background-color: #218838;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}
+
+.user-profile-buttons button:last-child {
+    margin-right: 0;
+}

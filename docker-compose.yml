@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    build:
+      context: system-info
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:80"
+    container_name: user-management-container
+
