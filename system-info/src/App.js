@@ -1,6 +1,6 @@
 import React from 'react';
 import UserManagementPage from './pages/UserManagementPage/UserManagementPage';
-import './App.css'; // Импортируйте общий файл стилей, если он у вас есть
+import './App.css';
 
 function App() {
   return (

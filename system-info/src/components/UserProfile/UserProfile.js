@@ -4,12 +4,12 @@ import './UserProfile.css';
 const UserProfile = ({ user, onUpdate, onCancel }) => {
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
-    const [age, setAge] = useState(user.age);
+    const [username, setUsername] = useState(user.username);
     const [address, setAddress] = useState(user.address);
     const [phone, setPhone] = useState(user.phone);
 
     const handleUpdate = () => {
-        onUpdate({ ...user, name, email, age, address, phone });
+        onUpdate({ ...user, name, username, email, address, phone });
     };
 
     return (
@@ -24,19 +24,19 @@ const UserProfile = ({ user, onUpdate, onCancel }) => {
                 />
             </label>
             <label>
+                Username:
+                <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+            </label>
+            <label>
                 Email:
                 <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                />
-            </label>
-            <label>
-                Age:
-                <input
-                    type="number"
-                    value={age}
-                    onChange={(e) => setAge(e.target.value)}
                 />
             </label>
             <label>

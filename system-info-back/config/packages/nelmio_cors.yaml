@@ -1,0 +1,19 @@
+nelmio_cors:
+    defaults:
+        allow_credentials: false
+        allow_origin: ['http://localhost:3000']  # разрешаем запросы с React
+        allow_headers: ['Content-Type', 'Authorization']
+        expose_headers: []
+        allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'DELETE']
+        max_age: 3600
+    paths:
+        '^/api/':
+            allow_origin: ['*']
+            allow_headers: ['Content-Type', 'Authorization']
+            allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'DELETE']
+            max_age: 3600
+        '^/user':
+            allow_origin: ['http://localhost:3000']  # конкретно для маршрута /user
+            allow_headers: ['Content-Type', 'Authorization']
+            allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'DELETE']
+            max_age: 3600

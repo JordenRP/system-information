@@ -1,10 +1,48 @@
 version: '3'
 services:
-  app:
+  front:
     build:
       context: system-info
       dockerfile: docker/Dockerfile
     ports:
       - "3000:80"
     container_name: user-management-container
+    networks:
+      - symfony_network
 
+  symfony_php:
+    build:
+      context: system-info-back
+      dockerfile: docker/php/Dockerfile
+    environment:
+      DATABASE_URL: "postgresql://app:password@database/app"
+    volumes:
+      - ./system-info-back:/var/www/symfony
+    networks:
+      - symfony_network
+
+  symfony_nginx:
+    build:
+      context: system-info-back
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./system-info-back:/var/www/symfony
+    depends_on:
+      - symfony_php
+    networks:
+      - symfony_network
+
+  database:
+    image: postgres:${POSTGRES_VERSION:-16}-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+    networks:
+      - symfony_network
+
+networks:
+  symfony_network:
+    driver: bridge

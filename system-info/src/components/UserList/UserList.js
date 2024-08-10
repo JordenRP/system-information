@@ -24,8 +24,8 @@ const UserList = ({ users, onSelectUser, onDeleteUser }) => {
                 <thead>
                 <tr>
                     <th>Name</th>
+                    <td>Username</td>
                     <th>Email</th>
-                    <th>Age</th>
                     <th>Address</th>
                     <th>Phone</th>
                     <th>Actions</th>
@@ -36,8 +36,8 @@ const UserList = ({ users, onSelectUser, onDeleteUser }) => {
                     filteredUsers.map((user) => (
                         <tr key={user.id}>
                             <td>{user.name}</td>
+                            <td>{user.username}</td>
                             <td>{user.email}</td>
-                            <td>{user.age}</td>
                             <td>{user.address}</td>
                             <td>{user.phone}</td>
                             <td>

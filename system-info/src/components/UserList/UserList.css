@@ -62,7 +62,7 @@ button:hover {
 
 .delete-button {
     background-color: #dc3545;
-    margin-right: 0; /* Убедитесь, что кнопка delete не имеет отступа справа */
+    margin-right: 0;
 }
 
 .delete-button:hover {
