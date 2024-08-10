@@ -28,4 +28,4 @@ RUN composer dump-autoload --optimize
 
 EXPOSE 9000
 
-CMD ["php-fpm"]
+CMD ["/bin/sh", "-c" ,"php bin/console doctrine:database:create --if-not-exists && php bin/console doctrine:migrations:migrate --no-interaction && php-fpm"]
